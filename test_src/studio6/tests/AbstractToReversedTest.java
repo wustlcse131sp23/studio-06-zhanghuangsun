@@ -35,6 +35,8 @@ public abstract class AbstractToReversedTest {
 
 	protected abstract int[] toReversed(int[] xs);
 
+	
+	
 	@Test
 	public void test() {
 		int[] copyOfXs = Arrays.copyOf(xs, xs.length);

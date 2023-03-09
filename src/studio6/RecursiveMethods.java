@@ -12,28 +12,34 @@ public class RecursiveMethods {
 	 *         ...)
 	 */
 	public static double geometricSum(int n) {
-		
-			// FIXME compute the geometric sum for the first n terms recursively
-			return 0;
-		
+
+		if (n == 0) {
+			return 0.0;
+		} else {
+			return (geometricSum(n - 1) + Math.pow(0.5, n));
+		}
+
 	}
 
 	/**
-	 * This method uses recursion to compute the greatest common divisor
-	 * for the two input values
+	 * This method uses recursion to compute the greatest common divisor for the two
+	 * input values
 	 * 
 	 * @param p first operand
 	 * @param q second operand
 	 * @return greatest common divisor of p and q
 	 */
 	public static int gcd(int p, int q) {
-		
-			// FIXME compute the gcd of p and q using recursion
-			return 0;
-		
-	}
 
-	
+		// FIXME compute the gcd of p and q using recursion
+		if (p % q == 0) {
+			return q;
+		}else {
+			return gcd(q, p%q);
+		}
+		
+
+	}
 
 	/**
 	 * This method uses recursion to create a reverse of the given array
@@ -43,9 +49,24 @@ public class RecursiveMethods {
 	 */
 	public static int[] toReversed(int[] array) {
 		
-			// FIXME create a helper method that can recursively reverse the given array
-			return new int[0];
+		// FIXME create a helper method that can recursively reverse the given array
+		int[] newArr = new int[array.length];
+		for (int i = 0; i < array.length - 1; i++) {
+			newArr[i] = array[i];
+		}
+		return swap(newArr, 0, array.length - 1); 
 		
+		
+	}
+	
+	public static int[] swap(int[] arr, int x, int y) {
+		if (x < y) {
+			int temp = arr[x];
+			arr[x] = arr[y];
+			arr[y] = temp;
+			return swap(arr, x + 1, y - 1);
+		}
+		return arr;
 	}
 
 	/**
@@ -59,7 +80,7 @@ public class RecursiveMethods {
 	 */
 	public static void circlesUponCircles(double xCenter, double yCenter, double radius,
 			double radiusMinimumDrawingThreshold) {
-		
+
 		// FIXME
 	}
 
